@@ -1,0 +1,327 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body {
+  margin: 0;
+  color: #242923;
+  background: #fbfaf7;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button, input, select { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #87927f;
+  outline-offset: 3px;
+}
+.topo {
+  position: fixed;
+  z-index: 10;
+  inset: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 5.25rem;
+  padding: .9rem max(5vw, calc((100% - 1440px) / 2));
+  color: #fff;
+  background: rgb(26 31 27 / 42%);
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.marca {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: -.045em;
+}
+.marca span { color: #c3cabe; }
+.topo nav { display: flex; gap: clamp(1.2rem, 3vw, 2.8rem); }
+.topo nav a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: rgb(255 255 255 / 88%);
+  font-size: .88rem;
+  letter-spacing: .025em;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.topo nav a:hover, .rodape a:hover { color: #c3cabe; }
+.menu-abrir {
+  display: none;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: .5rem .75rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgb(255 255 255 / 50%);
+  border-radius: 2px;
+  font: inherit;
+}
+.principal {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(720px, 100svh);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 8rem max(10vw, calc((100% - 1280px) / 2)) 6rem;
+  color: #fff;
+  background: #343a33;
+}
+.principal::before, .principal::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+}
+.principal::before {
+  background: url("imagens/7.avif") center 56% / cover no-repeat;
+  animation: zoom-hero 18s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+.principal::after {
+  z-index: 0;
+  background: linear-gradient(90deg, rgb(18 23 20 / 76%) 0%, rgb(18 23 20 / 54%) 36%, rgb(18 23 20 / 10%) 78%),
+    linear-gradient(0deg, rgb(18 23 20 / 28%), transparent 48%);
+}
+.principal > * { position: relative; z-index: 1; }
+.principal .sobretitulo { color: #d3d9d0; }
+.principal h1 {
+  max-width: 760px;
+  margin: .45rem 0 1.2rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.principal > p:not(.sobretitulo) { max-width: 520px; font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgb(255 255 255 / 88%); }
+.sobretitulo, .local {
+  color: #687365;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.botao {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+  padding: .9rem 1.55rem;
+  color: #fff;
+  background: #586655;
+  border: 1px solid #586655;
+  border-radius: 2px;
+  font-size: .88rem;
+  letter-spacing: .025em;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+.botao:hover { background: #465343; transform: translateY(-2px); }
+.secao { max-width: 1440px; margin: auto; padding: clamp(5rem, 8vw, 7.5rem) max(5vw, 2rem); }
+.cabecalho-secao { max-width: 660px; margin-bottom: 2.4rem; }
+.cabecalho-secao h2 {
+  margin: .15rem 0 .45rem;
+  color: #252a25;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+.cabecalho-secao > p:last-child { margin-top: .7rem; color: #686c66; }
+.grade-imoveis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+.filtros-imoveis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem .8rem;
+  margin: -1rem 0 2rem;
+  color: #3c433b;
+  font-size: .9rem;
+}
+.filtros-imoveis select, .modal-agendamento input {
+  min-height: 2.9rem;
+  padding: .55rem .75rem;
+  color: #242923;
+  background: #fff;
+  border: 1px solid #d8d8d1;
+  border-radius: 2px;
+  font: inherit;
+}
+.filtros-imoveis select { min-width: 10rem; }
+.cartao-imovel {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgb(38 43 37 / 5%);
+  border-radius: 4px;
+  box-shadow: 0 8px 26px rgb(34 38 32 / 6%);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.cartao-imovel:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgb(34 38 32 / 11%); }
+.cartao-imovel img { display: block; width: 100%; height: clamp(230px, 23vw, 340px); object-fit: cover; background: #e4e0d7; }
+.conteudo-cartao { padding: 1.35rem 1.45rem 1.5rem; }
+.conteudo-cartao h3 { margin: .22rem 0; color: #252a25; font-family: Georgia, 'Times New Roman', serif; font-size: 1.65rem; font-weight: 400; line-height: 1.25; }
+.local, .tipo { margin: 0; }
+.tipo { color: #777a74; font-size: .92rem; }
+.detalhes { display: flex; flex-wrap: wrap; gap: .45rem 1.15rem; margin: 1rem 0; padding: 0; color: #666b65; font-size: .88rem; list-style: none; }
+.preco { margin-bottom: 0; color: #343b34; font-size: 1.05rem; font-weight: 700; }
+.botao-agendar { min-height: 2.9rem; margin-top: 1rem; cursor: pointer; font-family: inherit; }
+.cartao-imovel[hidden] { display: none; }
+.mensagem-sem-imoveis { color: #686c66; }
+.modal-agendamento {
+  width: min(100% - 2rem, 34rem);
+  max-height: min(90vh, 48rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2rem;
+  color: #242923;
+  background: #fbfaf7;
+  border: 1px solid #eeece6;
+  border-radius: 4px;
+  box-shadow: 0 18px 60px rgb(34 38 32 / 22%);
+}
+.modal-agendamento::backdrop { background: rgb(18 23 20 / 62%); backdrop-filter: blur(3px); }
+.cabecalho-modal { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+.cabecalho-modal h2 {
+  margin: .15rem 0 .4rem;
+  color: #252a25;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.cabecalho-modal p:last-child { margin: 0; color: #686c66; }
+.fechar-modal {
+  display: inline-flex;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #343b34;
+  background: transparent;
+  border: 0;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-agendamento form { display: grid; gap: .45rem; margin-top: 1.4rem; }
+.modal-agendamento form label { color: #3c433b; font-size: .9rem; }
+.modal-agendamento input { width: 100%; margin-bottom: .5rem; }
+.modal-agendamento form .botao { justify-self: start; cursor: pointer; font-family: inherit; }
+.confirmacao-agendamento { margin: 1.5rem 0 0; color: #3c5a3e; }
+#diferenciais { border-top: 1px solid #eeece6; }
+.grade-diferenciais, .grade-depoimentos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.grade-diferenciais article, .grade-depoimentos blockquote { margin: 0; padding: 1.7rem 1.55rem; background: #f3f1ec; border-radius: 3px; }
+.grade-diferenciais article > span { color: #687365; font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; }
+.grade-diferenciais h3 { margin: .8rem 0 .4rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; }
+.grade-diferenciais article p { margin-bottom: 0; color: #696d67; font-size: .94rem; }
+.grade-depoimentos { grid-template-columns: repeat(3, 1fr); }
+.grade-depoimentos blockquote { background: #fff; border: 1px solid #eeece6; }
+.grade-depoimentos blockquote > p { font-family: Georgia, 'Times New Roman', serif; font-size: 1.12rem; line-height: 1.65; }
+.grade-depoimentos footer { margin-top: 1.4rem; color: #3c433b; font-size: .91rem; font-weight: 700; }
+.grade-depoimentos footer span, .nota-ficticio { color: #777a74; font-size: .82rem; font-weight: 400; }
+.nota-ficticio { margin-top: 1.5rem; }
+.rodape {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem max(5vw, calc((100% - 1344px) / 2)) 2rem;
+  color: #f7f6f2;
+  background: #252d27;
+}
+.rodape h2 { margin: 0 0 .7rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; font-weight: 400; }
+.rodape p { margin: .35rem 0; color: rgb(247 246 242 / 76%); }
+.rodape a { color: inherit; text-decoration: none; }
+.rodape > div, .rodape p, .conteudo-cartao, .cabecalho-modal { min-width: 0; }
+.rodape a { overflow-wrap: anywhere; }
+.marca-rodape span { color: #c3cabe; }
+.copyright { grid-column: 1 / -1; margin-top: 1.5rem !important; padding-top: 1.2rem; border-top: 1px solid rgb(255 255 255 / 18%); font-size: .82rem; }
+@keyframes zoom-hero {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.14); }
+}
+@media (max-width: 800px) {
+  .grade-imoveis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grade-diferenciais { grid-template-columns: repeat(2, 1fr); }
+  .principal { padding-right: 8vw; padding-left: 8vw; }
+}
+@media (max-width: 760px) {
+  html { scroll-padding-top: 4.5rem; }
+  .topo { min-height: 4.5rem; padding: .7rem 1.25rem; }
+  .marca { font-size: 1.4rem; }
+  .menu-abrir { display: inline-flex; align-items: center; justify-content: center; }
+  .topo nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: .4rem 1.25rem .8rem;
+    background: rgb(26 31 27 / 92%);
+    border-top: 1px solid rgb(255 255 255 / 15%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .topo nav.aberto { display: flex; }
+  .topo nav a { min-height: 2.75rem; padding: .45rem 0; }
+  .principal { min-height: max(680px, 100svh); padding: 7rem 1.5rem 5rem; }
+  .principal::before { background-position: 58% center; }
+  .principal::after { background: linear-gradient(90deg, rgb(18 23 20 / 72%), rgb(18 23 20 / 28%)), linear-gradient(0deg, rgb(18 23 20 / 24%), transparent 55%); }
+  .principal h1 { font-size: clamp(2.8rem, 11vw, 5rem); }
+  .secao { padding: clamp(4rem, 10vw, 5rem) 1.25rem; }
+  .cabecalho-secao { margin-bottom: 2rem; }
+  .cabecalho-secao h2 { font-size: clamp(2.25rem, 9vw, 3.2rem); }
+  .filtros-imoveis {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .35rem;
+    margin: 0 0 1.5rem;
+  }
+  .filtros-imoveis select { width: 100%; min-width: 0; margin-bottom: .45rem; }
+  .grade-imoveis, .grade-diferenciais, .grade-depoimentos { grid-template-columns: 1fr; }
+  .grade-imoveis { gap: 1.25rem; }
+  .cartao-imovel:hover { transform: none; }
+  .cartao-imovel img { height: min(72vw, 340px); }
+  .conteudo-cartao { padding: 1.2rem; }
+  .conteudo-cartao h3 { font-size: 1.5rem; }
+  .botao-agendar { width: 100%; }
+  .grade-diferenciais, .grade-depoimentos { gap: 1rem; }
+  .modal-agendamento {
+    width: calc(100% - 1rem);
+    max-height: calc(100dvh - 1rem);
+    padding: clamp(1rem, 5vw, 1.5rem);
+  }
+  .cabecalho-modal h2 { font-size: clamp(1.65rem, 7vw, 2rem); }
+  .modal-agendamento form { gap: .35rem; margin-top: 1rem; }
+  .modal-agendamento input { min-height: 2.9rem; }
+  .modal-agendamento form .botao { width: 100%; justify-self: stretch; margin-top: .5rem; }
+  .rodape { grid-template-columns: 1fr; padding: 3.5rem 1.5rem 1.5rem; }
+  .copyright { grid-column: 1; }
+}
+@media (max-width: 360px) {
+  .topo { padding-right: 1rem; padding-left: 1rem; }
+  .principal { padding-right: 1.25rem; padding-left: 1.25rem; }
+  .principal h1 { font-size: clamp(2.6rem, 12vw, 3.2rem); }
+  .secao { padding-right: 1rem; padding-left: 1rem; }
+  .rodape { padding-right: 1.25rem; padding-left: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

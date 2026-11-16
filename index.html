@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Imóveis residenciais de alto padrão em São Paulo e região. Conheça a seleção da DudaImoveis."
+    />
+    <title>DudaImoveis | Imóveis selecionados em São Paulo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripty.js" defer></script>
+  </head>
+  <body>
+    <header class="topo" id="inicio">
+      <a class="marca" href="#inicio" aria-label="DudaImoveis, início"
+        >Duda<span>Imoveis</span></a
+      >
+      <button
+        class="menu-abrir"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        Menu
+      </button>
+      <nav id="menu-principal" aria-label="Menu principal">
+        <a href="#imoveis">Imóveis</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contatos">Contatos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="principal" aria-labelledby="titulo-principal">
+        <p class="sobretitulo">DudaImoveis · São Paulo e região</p>
+        <h1 id="titulo-principal">Um lugar especial para chamar de seu.</h1>
+        <p>
+          Uma seleção de imóveis únicos para viver novas histórias com conforto,
+          espaço e personalidade.
+        </p>
+        <a class="botao" href="#imoveis">Ver Imóvel</a>
+      </section>
+
+      <section class="secao" id="imoveis" aria-labelledby="titulo-imoveis">
+        <div class="cabecalho-secao">
+          <p class="sobretitulo">Seleção DudaImoveis</p>
+          <h2 id="titulo-imoveis">Imóveis em destaque</h2>
+          <p>Conheça opções selecionadas em São Paulo e cidades próximas.</p>
+        </div>
+        <div class="filtros-imoveis">
+          <label for="filtro-tipo">Tipo de imóvel</label>
+          <select id="filtro-tipo">
+            <option value="todos">Todos</option>
+            <option value="apartamento">Apartamento</option>
+            <option value="cobertura">Cobertura</option>
+            <option value="casa">Casa</option>
+          </select>
+          <label for="filtro-bairro">Bairro</label>
+          <select id="filtro-bairro">
+            <option value="todos">Todos os bairros</option>
+          </select>
+        </div>
+        <div class="grade-imoveis">
+          <article class="cartao-imovel" data-tipo="casa" data-bairro="Bela Vista">
+            <img
+              src="./imagens/5.avif"
+              alt="Casa contemporânea com jardim e piscina"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">Osasco · Bela Vista</p>
+              <h3>Casa Horizonte</h3>
+              <p class="tipo">Casa</p>
+              <ul class="detalhes">
+                <li>420 m²</li>
+                <li>4 quartos</li>
+                <li>4 vagas</li>
+              </ul>
+              <p class="preco">R$ 4.800.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+          <article class="cartao-imovel" data-tipo="cobertura" data-bairro="Granja Viana">
+            <img
+              src="./imagens/3.avif"
+              alt="Sala ampla e iluminada de uma cobertura"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">Carapicuíba · Granja Viana</p>
+              <h3>Cobertura Alameda</h3>
+              <p class="tipo">Cobertura</p>
+              <ul class="detalhes">
+                <li>310 m²</li>
+                <li>3 quartos</li>
+                <li>3 vagas</li>
+              </ul>
+              <p class="preco">R$ 5.600.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+          <article class="cartao-imovel" data-tipo="casa" data-bairro="Alphaville">
+            <img
+              src="./imagens/6.avif"
+              alt="Residência contemporânea cercada por vegetação"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">Barueri · Alphaville</p>
+              <h3>Casa Parque das Artes</h3>
+              <p class="tipo">Casa</p>
+              <ul class="detalhes">
+                <li>680 m²</li>
+                <li>5 quartos</li>
+                <li>6 vagas</li>
+              </ul>
+              <p class="preco">R$ 12.900.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+          <article class="cartao-imovel" data-tipo="apartamento" data-bairro="Brás">
+            <img
+              src="./imagens/2.avif"
+              alt="Apartamento elegante com sala integrada"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">São Paulo · Brás</p>
+              <h3>Apartamento Estação</h3>
+              <p class="tipo">Apartamento</p>
+              <ul class="detalhes">
+                <li>245 m²</li>
+                <li>3 quartos</li>
+                <li>2 vagas</li>
+              </ul>
+              <p class="preco">R$ 4.200.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+          <article class="cartao-imovel" data-tipo="casa" data-bairro="Jardim dos Lagos">
+            <img
+              src="./imagens/4.avif"
+              alt="Casa ampla com arquitetura moderna"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">Embu das Artes · Jardim dos Lagos</p>
+              <h3>Casa Refúgio</h3>
+              <p class="tipo">Casa</p>
+              <ul class="detalhes">
+                <li>520 m²</li>
+                <li>4 quartos</li>
+                <li>5 vagas</li>
+              </ul>
+              <p class="preco">R$ 7.400.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+          <article class="cartao-imovel" data-tipo="cobertura" data-bairro="Tamboré">
+            <img
+              src="./imagens/1.avif"
+              alt="Cobertura com terraço e vista para a cidade"
+              loading="lazy"
+            />
+            <div class="conteudo-cartao">
+              <p class="local">Barueri · Tamboré</p>
+              <h3>Cobertura Vista Alta</h3>
+              <p class="tipo">Cobertura</p>
+              <ul class="detalhes">
+                <li>790 m²</li>
+                <li>5 quartos</li>
+                <li>6 vagas</li>
+              </ul>
+              <p class="preco">R$ 28.500.000</p>
+              <button class="botao botao-agendar" type="button">Agendar visita</button>
+            </div>
+          </article>
+        </div>
+        <p class="mensagem-sem-imoveis" id="mensagem-sem-imoveis" hidden>
+          Não encontramos imóveis com esses filtros. Que tal escolher outro tipo ou bairro?
+        </p>
+      </section>
+
+      <section
+        class="secao"
+        id="diferenciais"
+        aria-labelledby="titulo-diferenciais"
+      >
+        <div class="cabecalho-secao">
+          <p class="sobretitulo">Nosso jeito de cuidar</p>
+          <h2 id="titulo-diferenciais">Diferenciais</h2>
+          <p>Um atendimento próximo em cada etapa da sua escolha.</p>
+        </div>
+        <div class="grade-diferenciais">
+          <article>
+            <span aria-hidden="true">01</span>
+            <h3>Curadoria cuidadosa</h3>
+            <p>
+              Imóveis selecionados com atenção à qualidade, localização e estilo
+              de vida.
+            </p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <h3>Atendimento próximo</h3>
+            <p>
+              Uma equipe disponível para entender suas prioridades e acompanhar
+              sua busca.
+            </p>
+          </article>
+          <article>
+            <span aria-hidden="true">03</span>
+            <h3>Conhecimento local</h3>
+            <p>
+              Informações sobre bairros e regiões para ajudar você a escolher
+              com segurança.
+            </p>
+          </article>
+          <article>
+            <span aria-hidden="true">04</span>
+            <h3>Acompanhamento completo</h3>
+            <p>
+              Suporte atencioso do primeiro contato até os próximos passos da
+              negociação.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="secao"
+        id="depoimentos"
+        aria-labelledby="titulo-depoimentos"
+      >
+        <div class="cabecalho-secao">
+          <p class="sobretitulo">Histórias de clientes</p>
+          <h2 id="titulo-depoimentos">Depoimentos</h2>
+        </div>
+        <div class="grade-depoimentos">
+          <blockquote>
+            <p>
+              “Encontramos uma casa que combina com a nossa família. O
+              atendimento foi atencioso do começo ao fim.”
+            </p>
+            <footer>Marina e Rafael <span>· clientes fictícios</span></footer>
+          </blockquote>
+          <blockquote>
+            <p>
+              “A seleção de imóveis facilitou muito a busca. Recebemos
+              informações claras e visitas bem organizadas.”
+            </p>
+            <footer>Paula Mendes <span>· cliente fictícia</span></footer>
+          </blockquote>
+          <blockquote>
+            <p>
+              “Fomos acompanhados com cuidado em cada etapa e encontramos o
+              apartamento que procurávamos.”
+            </p>
+            <footer>
+              Eduardo Alcântara de Souza <span>· cliente fictício</span>
+            </footer>
+          </blockquote>
+        </div>
+        <p class="nota-ficticio">
+          Depoimentos demonstrativos. Clientes e relatos fictícios.
+        </p>
+      </section>
+    </main>
+
+    <footer class="rodape" id="contatos">
+      <div>
+        <a class="marca marca-rodape" href="#inicio"
+          >Duda<span>Imoveis</span></a
+        >
+        <p>Imóveis especiais em São Paulo e região.</p>
+      </div>
+      <div>
+        <h2>Fale com a gente</h2>
+        <p><a href="tel:+551130001234">(11) 3000-1234</a></p>
+        <p>
+          <a href="mailto:contato@dudaimoveis.example"
+            >contato@dudaimoveis.example</a
+          >
+        </p>
+        <p>São Paulo, SP</p>
+      </div>
+      <p class="copyright">
+        © <span id="ano-atual">2026</span> DudaImoveis. Conteúdo demonstrativo
+        com dados fictícios.
+      </p>
+    </footer>
+
+    <dialog class="modal-agendamento" id="modal-agendamento" aria-labelledby="titulo-agendamento">
+      <div class="cabecalho-modal">
+        <div>
+          <p class="sobretitulo">Visita ao imóvel</p>
+          <h2 id="titulo-agendamento">Agendar visita</h2>
+          <p id="imovel-agendamento"></p>
+        </div>
+        <button class="fechar-modal" type="button" aria-label="Fechar janela de agendamento">
+          &times;
+        </button>
+      </div>
+      <form id="form-agendamento">
+        <label for="nome-agendamento">Nome</label>
+        <input id="nome-agendamento" name="nome" type="text" autocomplete="name" required />
+        <label for="email-agendamento">E-mail</label>
+        <input id="email-agendamento" name="email" type="email" autocomplete="email" required />
+        <label for="telefone-agendamento">Telefone</label>
+        <input
+          id="telefone-agendamento"
+          name="telefone"
+          type="tel"
+          autocomplete="tel"
+          minlength="10"
+          title="Informe um telefone com pelo menos 10 caracteres."
+          required
+        />
+        <label for="data-agendamento">Data preferida</label>
+        <input id="data-agendamento" name="data" type="date" required />
+        <button class="botao" type="submit">Enviar solicitação</button>
+      </form>
+      <p class="confirmacao-agendamento" id="confirmacao-agendamento" role="status" hidden></p>
+    </dialog>
+  </body>
+</html>
